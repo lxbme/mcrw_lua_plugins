@@ -1,5 +1,7 @@
 -- Support Minecraft 1.21.8+
-print("[TP] Loading script...")
+local wrapper = Server:get_context(...)
+
+wrapper:log("Loading script...")
 
 local tp_requests = {}
 
@@ -73,10 +75,3 @@ wrapper:register(
         }
     end
 )
-
--- wrapper:register(
---     "\\[.*\\] \\[Server thread/INFO\\]: No player was found",
---     function(line)
---         return { "say [System] Someone tried to TP but failed!" }
---     end
--- )
